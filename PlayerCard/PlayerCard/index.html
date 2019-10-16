@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Player Card Creator</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/playercard.css">
+</head>
+<body>
+	<header role="banner">
+		<h1 class="logo">Player Card Creator</h1>
+	</header>
+	<main role="main" class="main">
+		<section class="form">
+			<div class="group">
+				<input type="text" data-scope="firstname">
+				<label>Firstname</label>
+			</div>
+			<div class="group">
+				<input type="text" data-scope="lastname">
+				<label>Lastname</label>
+			</div>
+			<div class="row">
+				<div class="group group--twothirds">
+					<input type="text" data-scope="stat1label">
+					<label>Stat #1 Label</label>
+				</div>
+				<div class="group group--onethird">
+					<input type="text" data-scope="stat1value">
+					<label>Stat #1 Value</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="group group--twothirds">
+					<input type="text" data-scope="stat2label">
+					<label>Stat #2 Label</label>
+				</div>
+				<div class="group group--onethird">
+					<input type="text" data-scope="stat2value">
+					<label>Stat #2 Value</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="group group--twothirds">
+					<input type="text" data-scope="stat3label">
+					<label>Stat #3 Label</label>
+				</div>
+				<div class="group group--onethird">
+					<input type="text" data-scope="stat3value">
+					<label>Stat #3 Value</label>
+				</div>
+			</div>
+			<div class="group">
+				<input type="text" data-scope="round">
+				<label>Round</label>
+			</div>
+			<div class="group">
+				<input type="file" accept="image/*" class="used" onchange="PlayerCard.uploadImage(this, 'teamlogo');">
+				<label>Team Logo</label>
+			</div>
+			<div class="group">
+				<input type="file" accept="image/*" class="used" onchange="PlayerCard.uploadImage(this, 'playerimage');">
+				<label>Player Image</label>
+			</div>
+			<a href="javascript:" class="button buttonBlue" onclick="PlayerCard.generateImage();">Generate Image</a>
+		</section>
+		<section class="previewer">
+			<div id="playercard" class="player-card" data-scope="playerimage">
+				<div class="player-card__overlay"></div>
+				<div class="player-card__firstname" data-scope="firstname">Firstname</div>
+				<div class="player-card__lastname" data-scope="lastname">Lastname</div>
+				<div class="player-card__stat1value" data-scope="stat1value">00</div>
+				<div class="player-card__stat1label" data-scope="stat1label">PTS</div>
+				<div class="player-card__stat2value" data-scope="stat2value">00</div>
+				<div class="player-card__stat2label" data-scope="stat2label">RBS</div>
+				<div class="player-card__stat3value" data-scope="stat3value">00</div>
+				<div class="player-card__stat3label" data-scope="stat3label">RNK</div>
+				<img class="player-card__teamlogo" data-scope="teamlogo">
+				<div class="player-card__round" data-scope="round">ROUND</div>
+			</div>
+		</section>
+	</main>
+	<script src="js/html2canvas.min.js"></script>
+	<script src="js/playercard.js"></script>
+</body>
+</html>
